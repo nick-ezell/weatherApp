@@ -1,1 +1,25 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  background: url("./backgroundImage.jpg");
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.search {
+  width: 30vw;
+  background: #dedede;
+}
+
+.forecast {
+  width: 70vw;
+  background: #fff;
+}
+/*# sourceMappingURL=style.css.map */

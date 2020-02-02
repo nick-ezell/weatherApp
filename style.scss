@@ -1,0 +1,19 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+body {
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    background: $backgroundImg;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.search {
+    width: 30vw;
+    background: rgb(222, 222, 222);
+}
+.forecast {
+    width: 70vw;
+    background: #fff;
+}
