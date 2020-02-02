@@ -2,18 +2,70 @@
 @import "./variables.scss";
 
 body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    font-size: 16px;
     background: $backgroundImg;
+}
+header {
+    background: #4aaaa5;
+    color: #fff;
+    width: 100vw;
+    height: 5em;
+    margin-bottom: 2.5em;
+    box-shadow: 5px 3px 2.5px #999;
+    @include displayFlex;
 }
 .wrapper {
     display: flex;
     flex-direction: row;
+    margin: 1em;
+}
+.search, .forecast {
+    padding: .5em;
 }
 .search {
+    border-color: #f0f0f0;
+    text-align: center;
+    display: table;
     width: 30vw;
-    background: rgb(222, 222, 222);
+    background: #f9f9f9;
+
+    h3 {
+        color: #777;
+    }
+}
+.searchBar {
+    display: table;
+    @include displayFlex;
+    button {
+        border: .05em solid #000;
+        color: #fff;
+        background: #4aaaa5;
+        border-radius: 0px 35px 35px 0px;
+        height: 4.65em;
+        width: 5em;
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    }
+    textarea {
+        text-align: center;
+        padding-top: .94em;
+        font-size: 14px;
+        float: left;
+        border-radius: 35px 0px 0px 35px;
+        resize: none;
+    }
+}
+section {
+    margin: .5em;
 }
 .forecast {
+    margin-left: 1.5em;
     width: 70vw;
     background: #fff;
 }

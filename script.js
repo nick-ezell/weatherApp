@@ -3,15 +3,22 @@ $(document).ready(function () {
     //Search area
     let searchDiv = $(".search")
     let forecastDiv = $(".forecast");
-    let searchInput = $("<input>");
+    let searchInput = $("<textarea>");
     let h3 = $("<h3>");
     let searchBtn = $("<button>");
+    let searchIcon = $("<img>");
+    searchIcon.attr("src", "./search.ico");
     let searchedCities = $("<div>");
+    searchedCities.attr("class", "searchedCities");
     let searchedCitiesArr = [];
+    let searchBarDiv = $("<div>");
+    searchBarDiv.attr("class", "searchBar");
     searchDiv.append(h3);
-    h3.text("Search for a city:")
-    searchDiv.append(searchInput);
-    searchDiv.append(searchBtn);
+    searchDiv.append(searchBarDiv);
+    h3.text("Find your city:")
+    searchBarDiv.append(searchInput);
+    searchBtn.append(searchIcon);
+    searchBarDiv.append(searchBtn);
     searchDiv.append(searchedCities);
     searchedCities.attr("class", "recentCities");
     //Function for populating searchedCities div.
