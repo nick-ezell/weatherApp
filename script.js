@@ -36,7 +36,7 @@ $(document).ready(function () {
         //Variables for API
         let key = "2d8b4f870d285189aa67e03e30f0d6e3";
         let city = searchedCity;
-        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + key;
+        let queryURL = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + key;
         if (!searchedCitiesArr.includes(searchedCity)) {
             searchedCitiesArr.push(searchedCity)
         } else if (searchedCitiesArr.includes(searchedCity)) {
@@ -50,9 +50,9 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (props) {
             // let icon = props.weather[0].icon;
-            // let weatherIcon = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + icon + ".png");
-            let fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?appid=" + key + "&q=" + props.name + "," + props.sys.country;
-            let uvQuery = "https://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" + props.coord.lat + "&lon=" + props.coord.lon;
+            // let weatherIcon = $("<img>").attr("src", "https://crossorigin.me/http://openweathermap.org/img/wn/" + icon + ".png");
+            let fiveDayURL = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast?appid=" + key + "&q=" + props.name + "," + props.sys.country;
+            let uvQuery = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" + props.coord.lat + "&lon=" + props.coord.lon;
             let currentCityDiv = $("<div>").attr("id", "currentCity");
             let currentCity = $("<h2>").attr("class", "currentCity");
             let currentTemp = $("<p>").attr("class", "temperature");
