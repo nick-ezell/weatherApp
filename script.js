@@ -47,7 +47,6 @@ $(document).ready(function () {
         //We need to add click event to display searched cities
         $.ajax({
             url: queryURL,
-            headers: {'X-Requested-With': 'XMLHttpsRequest'},
             method: "GET"
         }).then(function (props) {
             // let icon = props.weather[0].icon;
@@ -74,14 +73,12 @@ $(document).ready(function () {
             currentCityDiv.append(currentUV);
             $.ajax({
                 url: uvQuery,
-                headers: {'X-Requested-With': 'XMLHttpsRequest'},
                 method: "GET"
             }).then(function (data) {
                 currentUV.text("UV Index: " + data.value);
             })
             $.ajax({
                 url: fiveDayURL,
-                headers: {'X-Requested-With': 'XMLHttpsRequest'},
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
