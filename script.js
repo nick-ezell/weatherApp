@@ -93,9 +93,6 @@ $(document).ready(function () {
                     if (containsMidday === 1) {
                         let eachDay = response.list[i];
                         dayArr.push(eachDay);
-                        console.log(dayArr);
-                        // console.log(temp);
-                        // console.log(humidity);
                     }
                 }
                 forecastDiv.append(fiveDayDiv);
@@ -104,12 +101,57 @@ $(document).ready(function () {
                 let dayThree = $("<div>").attr("class", "fiveDay");
                 let dayFour = $("<div>").attr("class", "fiveDay");
                 let dayFive = $("<div>").attr("class", "fiveDay");
+                //Day one of forecast
                 fiveDayDiv.append(dayOne);
+                let dayOneDate = $("<p>").text(moment().add(1,"day").format("l"))
+                dayOne.append(dayOneDate);
+                dayOne.append($("<hr>"));
                 let dayOneTempMath = (dayArr[0].main.temp - 273.15) * 1.80 + 32;
                 let dayOneTemp = $("<p>").text("Temp: " + dayOneTempMath.toFixed(2) + "°F");
                 dayOne.append(dayOneTemp);
                 let dayOneHumidity = $("<p>").text("Humidity: " + dayArr[0].main.humidity + "%");
                 dayOne.append(dayOneHumidity);
+                //Day two of forecast
+                fiveDayDiv.append(dayTwo);
+                let dayTwoDate = $("<p>").text(moment().add(2,"day").format("l"))
+                dayTwo.append(dayTwoDate);
+                dayTwo.append($("<hr>"));
+                let dayTwoTempMath = (dayArr[1].main.temp - 273.15) * 1.80 + 32;
+                let dayTwoTemp = $("<p>").text("Temp: " + dayTwoTempMath.toFixed(2) + "°F");
+                dayTwo.append(dayTwoTemp);
+                let dayTwoHumidity = $("<p>").text("Humidity: " + dayArr[1].main.humidity + "%");
+                dayTwo.append(dayTwoHumidity);
+                //Day three of forecast
+                fiveDayDiv.append(dayThree);
+                let dayThreeDate = $("<p>").text(moment().add(2,"day").format("l"))
+                dayThree.append(dayThreeDate);
+                dayThree.append($("<hr>"));
+                let dayThreeTempMath = (dayArr[2].main.temp - 273.15) * 1.80 + 32;
+                let dayThreeTemp = $("<p>").text("Temp: " + dayThreeTempMath.toFixed(2) + "°F");
+                dayThree.append(dayThreeTemp);
+                let dayThreeHumidity = $("<p>").text("Humidity: " + dayArr[2].main.humidity + "%");
+                dayThree.append(dayThreeHumidity);
+                //Day four of forecast
+                fiveDayDiv.append(dayFour);
+                let dayFourDate = $("<p>").text(moment().add(2,"day").format("l"))
+                dayFour.append(dayFourDate);
+                dayFour.append($("<hr>"));
+                let dayFourTempMath = (dayArr[3].main.temp - 273.15) * 1.80 + 32;
+                let dayFourTemp = $("<p>").text("Temp: " + dayFourTempMath.toFixed(2) + "°F");
+                dayFour.append(dayFourTemp);
+                let dayFourHumidity = $("<p>").text("Humidity: " + dayArr[3].main.humidity + "%");
+                dayFour.append(dayFourHumidity);
+                //Day five of forecast
+                fiveDayDiv.append(dayFive);
+                let dayFiveDate = $("<p>").text(moment().add(2,"day").format("l"))
+                dayFive.append(dayFiveDate);
+                dayFive.append($("<hr>"));
+                let dayFiveTempMath = (dayArr[4].main.temp - 273.15) * 1.80 + 32;
+                let dayFiveTemp = $("<p>").text("Temp: " + dayFiveTempMath.toFixed(2) + "°F");
+                dayFive.append(dayFiveTemp);
+                let dayFiveHumidity = $("<p>").text("Humidity: " + dayArr[4].main.humidity + "%");
+                dayFive.append(dayFiveHumidity);
+                console.log(dayArr);
             })
         })
     });

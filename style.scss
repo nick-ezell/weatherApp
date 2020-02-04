@@ -26,6 +26,7 @@ header {
 .search, .forecast {
     padding: .5em;
     box-shadow: inset 0px 3px 3px 3px #dcdcdc;
+    height: auto;
 }
 .search {
     border-color: #f0f0f0;
@@ -84,13 +85,15 @@ section {
 .fiveDayDiv {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
     margin-top: .5em;
 }
 .fiveDay {
     text-align: left;
     background: #6aaaa5;
     color: #fff;
-    width: 14vw;
-    padding: .5em;
+    font-size: 14px;
+    width: 10vw;
+    padding: .25em;
 }

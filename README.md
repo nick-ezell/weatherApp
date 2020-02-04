@@ -1,1 +1,1 @@
-# weatherApp
+Single Page Application using OpenWeatherMap's weather APIs to get the temperature, humidity, wind speed and UV index for the current day in the searched city as well as providing a five day future forecast containing the temperature and humidity. I used jQuery for easier DOM manipulation and moment.js to format time.
