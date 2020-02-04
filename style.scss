@@ -81,3 +81,16 @@ section {
     padding: .5em;
     border: .025em solid #999;
 }
+.fiveDayDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: .5em;
+}
+.fiveDay {
+    text-align: left;
+    background: #6aaaa5;
+    color: #fff;
+    width: 14vw;
+    padding: .5em;
+}

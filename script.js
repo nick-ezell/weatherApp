@@ -82,7 +82,8 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
-                let fiveDayDiv = $("<div>").attr("class", "fiveDay");
+                let dayArr = [];
+                let fiveDayDiv = $("<div>").attr("class", "fiveDayDiv");
                 for (i = 0; i < response.list.length; i++) {
                     let midday = response.list[i].dt_txt.substring(10);
                     let kToF = (response.list[i].main.temp - 273.15) * 1.80 + 32;
@@ -91,26 +92,24 @@ $(document).ready(function () {
                     let containsMidday = midday.indexOf("12:00:00");
                     if (containsMidday === 1) {
                         let eachDay = response.list[i];
-                        // console.log(eachDay);
-                        console.log(temp);
-                        console.log(humidity);
-                        let dayOne = $("<div>").attr("class", "dayOne");
-                        let dayTwo = $("<div>").attr("class", "dayTwo");
-                        let dayThree = $("<div>").attr("class", "dayThree");
-                        let dayFour = $("<div>").attr("class", "dayFour");
-                        let dayFive = $("<div>").attr("class", "dayFive");
-                        let dayTemp = $("<p>").text(temp);
-                        let dayHumidity = $("<p>").text(humidity)
-                        // fiveDayDiv.append(dayOne);
-                        // dayOne.append(dayTemp);
-                        // dayOne.append(dayHumidity);
+                        dayArr.push(eachDay);
+                        console.log(dayArr);
+                        // console.log(temp);
+                        // console.log(humidity);
                     }
-
                 }
                 forecastDiv.append(fiveDayDiv);
-                // dayOne
-                // fiveDayDiv.append(dayOne);
-
+                let dayOne = $("<div>").attr("class", "fiveDay");
+                let dayTwo = $("<div>").attr("class", "fiveDay");
+                let dayThree = $("<div>").attr("class", "fiveDay");
+                let dayFour = $("<div>").attr("class", "fiveDay");
+                let dayFive = $("<div>").attr("class", "fiveDay");
+                fiveDayDiv.append(dayOne);
+                let dayOneTempMath = (dayArr[0].main.temp - 273.15) * 1.80 + 32;
+                let dayOneTemp = $("<p>").text("Temp: " + dayOneTempMath.toFixed(2) + "°F");
+                dayOne.append(dayOneTemp);
+                let dayOneHumidity = $("<p>").text("Humidity: " + dayArr[0].main.humidity + "%");
+                dayOne.append(dayOneHumidity);
             })
         })
     });

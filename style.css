@@ -120,4 +120,26 @@ section {
   padding: .5em;
   border: .025em solid #999;
 }
+
+.fiveDayDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: .5em;
+}
+
+.fiveDay {
+  text-align: left;
+  background: #6aaaa5;
+  color: #fff;
+  width: 14vw;
+  padding: .5em;
+}
 /*# sourceMappingURL=style.css.map */
