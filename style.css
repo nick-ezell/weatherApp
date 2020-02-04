@@ -40,6 +40,8 @@ header {
 
 .search, .forecast {
   padding: .5em;
+  -webkit-box-shadow: inset 0px 3px 3px 3px #dcdcdc;
+          box-shadow: inset 0px 3px 3px 3px #dcdcdc;
 }
 
 .search {
@@ -65,6 +67,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 1em;
 }
 
 .searchBar button {
@@ -72,7 +75,7 @@ header {
   color: #fff;
   background: #4aaaa5;
   border-radius: 0px 35px 35px 0px;
-  height: 4.65em;
+  height: 2.85em;
   width: 5em;
 }
 
@@ -81,22 +84,40 @@ header {
   cursor: pointer;
 }
 
-.searchBar textarea {
+.searchBar input {
   text-align: center;
-  padding-top: .94em;
-  font-size: 14px;
+  height: 1.7em;
+  font-size: 16px;
   float: left;
+  border: .07em solid #000;
   border-radius: 35px 0px 0px 35px;
   resize: none;
 }
 
 section {
-  margin: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.5em;
+  background: #dae2e3;
+  border: .05em solid #000;
+  margin: .025em;
 }
 
 .forecast {
   margin-left: 1.5em;
   width: 70vw;
   background: #fff;
+}
+
+#currentCity {
+  padding: .5em;
+  border: .025em solid #999;
 }
 /*# sourceMappingURL=style.css.map */
