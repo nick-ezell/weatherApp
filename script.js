@@ -31,6 +31,7 @@ $(document).ready(function () {
         }
     };
     searchBtn.on("click", function () {
+        event.preventDefault();
         let searchedCity = searchInput.val();
         //Variables for API
         let key = "2d8b4f870d285189aa67e03e30f0d6e3";
@@ -60,6 +61,8 @@ $(document).ready(function () {
             let currentUV = $("<p>").attr("class", "uv");
             forecastDiv.empty();
             currentCity.text(props.name.trim() + " " + today);
+            //This icon stopped working and I have absolutely no clue why
+                    // It shows up on load then automatically disappears. 🤷‍♂️ 
             let iconCurrent = props.weather[0].icon;
             let weatherIcon = $("<img>").attr("src", "https://openweathermap.org/img/w/" + iconCurrent + ".png");
             currentCity.append(weatherIcon);
@@ -167,9 +170,13 @@ $(document).ready(function () {
                 dayFive.append(dayFiveTemp);
                 let dayFiveHumidity = $("<p>").text("Humidity: " + dayArr[4].main.humidity + "%");
                 dayFive.append(dayFiveHumidity);
+                dayOneDate.attr("class", "fiveDayDate");
+                dayTwoDate.attr("class", "fiveDayDate");
+                dayThreeDate.attr("class", "fiveDayDate");
+                dayFourDate.attr("class", "fiveDayDate");
+                dayFiveDate.attr("class", "fiveDayDate");
                 console.log(dayArr);
             })
-            // let icon =  props.
         })
     });
 });

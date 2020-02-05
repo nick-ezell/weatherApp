@@ -100,3 +100,6 @@ h2 {
     width: 10vw;
     padding: .25em;
 }
+.fiveDayDate {
+    @include displayFlex;
+}
