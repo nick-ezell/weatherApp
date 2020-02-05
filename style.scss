@@ -78,6 +78,9 @@ section {
     width: 70vw;
     background: #fff;
 }
+h2 {
+    @include displayFlex;
+}
 #currentCity {
     padding: .5em;
     border: .025em solid #999;

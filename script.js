@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     //Search area
     let today = moment().format("l");
     let searchDiv = $(".search")
@@ -49,8 +48,7 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (props) {
-            // let icon = props.weather[0].icon;
-            // let weatherIcon = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + icon + ".png");
+            console.log(props);
             let fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?appid=" + key + "&q=" + props.name + "," + props.sys.country;
             let uvQuery = "https://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" + props.coord.lat + "&lon=" + props.coord.lon;
             let currentCityDiv = $("<div>").attr("id", "currentCity");
@@ -62,6 +60,9 @@ $(document).ready(function () {
             let currentUV = $("<p>").attr("class", "uv");
             forecastDiv.empty();
             currentCity.text(props.name.trim() + " " + today);
+            let iconCurrent = props.weather[0].icon;
+            let weatherIcon = $("<img>").attr("src", "https://openweathermap.org/img/w/" + iconCurrent + ".png");
+            currentCity.append(weatherIcon);
             forecastDiv.append(currentCityDiv);
             currentCityDiv.append(currentCity);
             currentTemp.text("Temperature: " + tempF.toFixed(2) + "°F");
@@ -103,8 +104,11 @@ $(document).ready(function () {
                 let dayFive = $("<div>").attr("class", "fiveDay");
                 //Day one of forecast
                 fiveDayDiv.append(dayOne);
-                let dayOneDate = $("<p>").text(moment().add(1,"day").format("l"))
+                let dayOneDate = $("<p>").text(moment().add(1, "day").format("l"))
+                let iconOne = dayArr[0].weather[0].icon;
+                let weatherIconOne = $("<img>").attr("src", "https://openweathermap.org/img/w/" + iconOne + ".png");
                 dayOne.append(dayOneDate);
+                dayOneDate.append(weatherIcon);
                 dayOne.append($("<hr>"));
                 let dayOneTempMath = (dayArr[0].main.temp - 273.15) * 1.80 + 32;
                 let dayOneTemp = $("<p>").text("Temp: " + dayOneTempMath.toFixed(2) + "°F");
@@ -113,8 +117,11 @@ $(document).ready(function () {
                 dayOne.append(dayOneHumidity);
                 //Day two of forecast
                 fiveDayDiv.append(dayTwo);
-                let dayTwoDate = $("<p>").text(moment().add(2,"day").format("l"))
+                let dayTwoDate = $("<p>").text(moment().add(2, "day").format("l"))
                 dayTwo.append(dayTwoDate);
+                let iconTwo = dayArr[1].weather[0].icon;
+                let weatherIconTwo = $("<img>").attr("src", "https://openweathermap.org/img/w/" + iconTwo + ".png");
+                dayTwoDate.append(weatherIconTwo);
                 dayTwo.append($("<hr>"));
                 let dayTwoTempMath = (dayArr[1].main.temp - 273.15) * 1.80 + 32;
                 let dayTwoTemp = $("<p>").text("Temp: " + dayTwoTempMath.toFixed(2) + "°F");
@@ -123,8 +130,11 @@ $(document).ready(function () {
                 dayTwo.append(dayTwoHumidity);
                 //Day three of forecast
                 fiveDayDiv.append(dayThree);
-                let dayThreeDate = $("<p>").text(moment().add(2,"day").format("l"))
+                let dayThreeDate = $("<p>").text(moment().add(3, "day").format("l"))
                 dayThree.append(dayThreeDate);
+                let iconThree = dayArr[2].weather[0].icon;
+                let weatherIconThree = $("<img>").attr("src", "https://openweathermap.org/img/w/" + iconThree + ".png");
+                dayThreeDate.append(weatherIconThree);
                 dayThree.append($("<hr>"));
                 let dayThreeTempMath = (dayArr[2].main.temp - 273.15) * 1.80 + 32;
                 let dayThreeTemp = $("<p>").text("Temp: " + dayThreeTempMath.toFixed(2) + "°F");
@@ -133,8 +143,11 @@ $(document).ready(function () {
                 dayThree.append(dayThreeHumidity);
                 //Day four of forecast
                 fiveDayDiv.append(dayFour);
-                let dayFourDate = $("<p>").text(moment().add(2,"day").format("l"))
+                let dayFourDate = $("<p>").text(moment().add(4, "day").format("l"))
                 dayFour.append(dayFourDate);
+                let iconFour = dayArr[3].weather[0].icon;
+                let weatherIconFour = $("<img>").attr("src", "https://openweathermap.org/img/w/" + iconFour + ".png");
+                dayFourDate.append(weatherIconFour);
                 dayFour.append($("<hr>"));
                 let dayFourTempMath = (dayArr[3].main.temp - 273.15) * 1.80 + 32;
                 let dayFourTemp = $("<p>").text("Temp: " + dayFourTempMath.toFixed(2) + "°F");
@@ -143,8 +156,11 @@ $(document).ready(function () {
                 dayFour.append(dayFourHumidity);
                 //Day five of forecast
                 fiveDayDiv.append(dayFive);
-                let dayFiveDate = $("<p>").text(moment().add(2,"day").format("l"))
+                let dayFiveDate = $("<p>").text(moment().add(5, "day").format("l"))
                 dayFive.append(dayFiveDate);
+                let iconFive = dayArr[4].weather[0].icon;
+                let weatherIconFive = $("<img>").attr("src", "https://openweathermap.org/img/w/" + iconFive + ".png");
+                dayFiveDate.append(weatherIconFive);
                 dayFive.append($("<hr>"));
                 let dayFiveTempMath = (dayArr[4].main.temp - 273.15) * 1.80 + 32;
                 let dayFiveTemp = $("<p>").text("Temp: " + dayFiveTempMath.toFixed(2) + "°F");
@@ -153,6 +169,7 @@ $(document).ready(function () {
                 dayFive.append(dayFiveHumidity);
                 console.log(dayArr);
             })
+            // let icon =  props.
         })
     });
 });
